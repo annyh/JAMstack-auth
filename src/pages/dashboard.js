@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
 import { navigate } from 'gatsby'
+import IdentityModal from 'react-netlify-identity-widget'
 import { Router } from '@reach/router'
 import Layout from '../components/layout'
 import Profile from '../components/profile'
 import RouteBase from '../components/route-base'
 import RouteSecret from '../components/route-secret'
 import RouteLogin from '../components/route-login'
+import 'react-netlify-identity-widget/styles.css'
 
 const Dashboard = ({ location }) => {
     // on component mount
@@ -22,7 +24,7 @@ const Dashboard = ({ location }) => {
                 <RouteSecret path='/dashboard/secret' />
                 <RouteLogin path='/dashboard/login' />
             </Router>
-            <p>TODO: create a Dashboard</p>
+            <IdentityModal showDialog={true} />
         </Layout>
     )
 }
